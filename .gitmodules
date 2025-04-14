@@ -1,3 +1,9 @@
 [submodule "client-gateway"]
 	path = client-gateway
 	url = https://github.com/marquituswp/client-gatewayNestjs.git
+[submodule "orders-ms"]
+	path = orders-ms
+	url = https://github.com/marquituswp/orders-microservice.git
+[submodule "products-ms"]
+	path = products-ms
+	url = https://github.com/marquituswp/products-microservice.git
