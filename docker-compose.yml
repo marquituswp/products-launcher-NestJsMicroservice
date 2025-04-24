@@ -43,7 +43,6 @@ services:
       - DATABASE_URL=postgresql://postgres:123456@orders-db:5432/ordersdb?schema=public
       - CHOKIDAR_USEPOLLING=true
 
-
   orders-db:
     image: postgres:16.2
     container_name: orders_database
@@ -56,3 +55,23 @@ services:
       - POSTGRES_DB=ordersdb
     ports:
       - 5432:5432
+
+  # =======================
+  # Payments Microservice
+  # =======================
+
+  payments-ms:
+    build: ./payments-ms
+    volumes:
+      - ./payments-ms/src:/usr/src/app/src
+    command: pnpm run start:dev
+    ports:
+      - "${PAYMENTS_MS_PORT}:${PAYMENTS_MS_PORT}"
+    environment:
+      - PORT=${PAYMENTS_MS_PORT}
+      - NATS_SERVERS=nats://nats_server:4222
+      - STRIPE_SECRET=${STRIPE_SECRET}
+      - STRIPE_SUCCESS_URL=${STRIPE_SUCCESS_URL}
+      - STRIPE_CANCEL_URL=${STRIPE_CANCEL_URL}
+      - STRIPE_ENDPOINT_SECRET=${STRIPE_ENDPOINT_SECRET}
+      - CHOKIDAR_USEPOLLING=true
