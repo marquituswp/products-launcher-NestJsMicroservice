@@ -41,3 +41,22 @@ git submodule update --remote
 Si se trabaja en el repositorio que tiene los sub-módulos, **primero actualizar y hacer push** en el sub-módulo y **después** en el repositorio principal.
 
 Si se hace al revés, se perderán las referencias de los sub-módulos en el repositorio principal y tendremos que resolver conflictos.
+
+## Notas
+
+- **FUNCIONAMIENTO CORRECTO DE WATCH MODE EN WINDOWS**:
+
+Para que el watch mode funcione correctamente en windows, es necesario añadir la siguiente línea en el `docker-compose.yml`:
+
+```yaml
+environment:
+  - CHOKIDAR_USEPOLLING=true
+```
+
+Además, hay que añadir lo siguiente en el `tsconfig.json`:
+
+```json
+   "watchOptions": {
+    "watchFile": "fixedPollingInterval"
+}
+```
