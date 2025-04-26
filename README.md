@@ -60,3 +60,12 @@ Además, hay que añadir lo siguiente en el `tsconfig.json`:
     "watchFile": "fixedPollingInterval"
 }
 ```
+
+- **MICROSERVICES MESSAGES PATTERNS**:
+
+````
+foo.* matches foo.bar, foo.baz, etc. but not foo.bar.baz
+foo.*.bar matches foo.baz.bar, foo.qux.bar, etc. but not foo.bar or foo.bar.baz
+foo.> matches foo.bar, foo.bar.baz, etc.
+```
+````
