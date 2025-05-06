@@ -88,8 +88,6 @@ services:
     environment:
       - PORT=3004
       - NATS_SERVERS=nats://nats_server:4222
-      - zulCaSElv1G4YjR9
-      - root-user
       - DATABASE_URL=${AUTH_DATABASE_URL}
       - JWT_SECRET=${JWT_SECRET}
       - CHOKIDAR_USEPOLLING=true

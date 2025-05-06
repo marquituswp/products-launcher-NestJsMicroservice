@@ -69,3 +69,13 @@ foo.*.bar matches foo.baz.bar, foo.qux.bar, etc. but not foo.bar or foo.bar.baz
 foo.> matches foo.bar, foo.bar.baz, etc.
 ```
 ````
+
+## PROD
+
+1. Clonar el repositorio
+2. Crear un .env basado en el .env.template
+3. Ejecutar el comando
+
+```
+docker compose -f docker-compose.prod.yml build
+```
