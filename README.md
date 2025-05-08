@@ -5,6 +5,22 @@
 3. Ejecutar el comando `git submodule update --init --recursive` para reconstruir los sub-módulos
 4. Ejecturar el comando `docker-compose up --build` para crear y correr los contenedores de docker
 
+## PROD
+
+1. Clonar el repositorio
+2. Crear un .env basado en el .env.template
+3. Ejecutar el comando
+
+```
+docker compose -f docker-compose.prod.yml build
+```
+
+4. Correr el comando
+
+```
+docker compose -f docker-compose.prod.yml up
+```
+
 ### Pasos para crear los Git Submodules
 
 1. Crear un nuevo repositorio en GitHub
@@ -105,18 +121,24 @@ foo.> matches foo.bar, foo.bar.baz, etc.
 ```
 ````
 
-## PROD
+## Google Cloud
 
-1. Clonar el repositorio
-2. Crear un .env basado en el .env.template
-3. Ejecutar el comando
+1. Crear un proyecto en Google Cloud
+2. Crear un container registry en Google Cloud
+3. Crear un bucket en Google Cloud Storage
+4. Instalación de Google Cloud SDK
+5. Autenticación de Google Cloud SDK
 
+## Subir imagenes Docker a Google Cloud
+
+1. Construir las imagenenes Docker
+
+```bash
+docker build -t gcr.io/<PROJECT_ID>/<IMAGE_NAME> . || docker compose -f docker-compose.prod.yml build
 ```
-docker compose -f docker-compose.prod.yml build
-```
 
-4. Correr el comando
+2. Subir la imagen Docker a Google Cloud
 
-```
-docker compose -f docker-compose.prod.yml up
+```bash
+docker image push gcr.io/<PROJECT_ID>/<IMAGE_NAME>
 ```
