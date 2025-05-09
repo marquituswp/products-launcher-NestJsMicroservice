@@ -18,7 +18,7 @@ spec:
         app: client-gateway
     spec:
       containers:
-        - image: europe-southwest1-docker.pkg.dev/tienda-microservices-459210/image-registry/client-gateway
+        - image: europe-southwest1-docker.pkg.dev/tienda-microservices-459210/docker-registry/client-gateway
           name: client-gateway
           resources: {}
 status: {}

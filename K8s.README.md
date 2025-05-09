@@ -60,16 +60,16 @@ Recordar que los secrets están en `base64`, por lo que si queremos editar un se
 
 ## Configurar secretos de Google Cloud para obtener las imágenes
 
-1. Crear secreto:
+1. Crear secreto en **GIT BASH**:
 
 ```
-kubectl create secret docker-registry gcr-json-key --docker-server=SERVIDOR-DE-GOOGLE-docker.pkg.dev --docker-username=_json_key --docker-password='$(cat PATH/DE/Tienda Microservices IAM.json)' --docker-email=TU_CORREO@gmail.com
+kubectl create secret docker-registry gcr-json-key --docker-server=SERVIDOR-DE-GOOGLE-docker.pkg.dev --docker-username=_json_key --docker-password="$(cat 'PATH/DE/Tienda Microservices IAM.json')" --docker-email=TU_CORREO@gmail.com
 ```
 
-2. Path del secreto para que use la llave:
+2. Path del secreto para que use la llave en **GIT BASH**:
 
 ```
-kubectl patch serviceaccounts default -p '{\"imagePullSecrets\": [{\"name\":\"gcr-json-key\"}]}'
+kubectl patch serviceaccounts default -p '{ "imagePullSecrets": [{ "name":"gcp-cr-read-access" }] }'
 ```
 
 ## Exportar y aplicar configuraciones con archivos (secrets en este caso)
