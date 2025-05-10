@@ -24,7 +24,7 @@ El deployment se crea con configuración por defecto, por lo que se puede editar
 
 ```
 kubectl create service clusterip <nombre> --tcp=<8888> --dry-run=client -o yaml > service.yml
-**kubectl create service nodeport <nombre> --tcp=<3000> --dry-run=client -o yaml > service.yml**
+kubectl create service nodeport <nombre> --tcp=<3000> --dry-run=client -o yaml > service.yml
 ```
 
 - **clusterip**: solo se puede acceder desde dentro del cluster
