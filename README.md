@@ -1,3 +1,32 @@
+### English
+
+# E-Commerce Microservices Platform (Monorepo)
+
+This repository serves as the centralized build and orchestration layer for all microservices in the E-Commerce platform. It contains:
+
+- **Dockerfiles & Build Config**: Definitions to build container images for each service.
+- **Git Submodules**: References to individual microservice repositories (Product, Order, Payment, Auth, and API Gateway).
+- **Docker Compose & Helm Charts**: Local development setup via Docker Compose and production deployment manifests for Kubernetes (Helm).
+- **CI/CD Pipelines**: GitHub Actions workflows that build images, run tests, publish to Container Registry, and update deployments.
+- **Google Cloud Integration**: Scripts and configurations for deploying to Google Cloud Platform.
+- **NATS**: Message broker for inter-service communication.
+- **Stripe**: Payment processing integration.
+- **Prisma**: ORM for database interactions.
+
+### Spanish
+
+# Plataforma de Microservicios E-Commerce (Monorepo)
+
+Este repositorio sirve como la capa de construcción y orquestación centralizada para todos los microservicios en la plataforma E-Commerce. Contiene:
+
+- **Dockerfiles & Configuración de Construcción**: Definiciones para construir imágenes de contenedor para cada servicio.
+- **Git Submodules**: Referencias a repositorios de microservicios individuales (Producto, Pedido, Pago, Autenticación y API Gateway).
+- **Docker Compose & Helm Charts**: Configuración de desarrollo local a través de Docker Compose y manifiestos de despliegue para producción en Kubernetes (Helm).
+- **Pipelines CI/CD**: Flujos de trabajo de GitHub Actions que construyen imágenes, ejecutan pruebas, publican en el Registro de Contenedores y actualizan despliegues.
+- **Integración con Google Cloud**: Scripts y configuraciones para desplegar en Google Cloud Platform.
+- **NATS**: Broker de mensajes para la comunicación entre servicios.
+- **Stripe**: Integración de procesamiento de pagos.
+
 ## Dev
 
 1. Clonar el repositorio
